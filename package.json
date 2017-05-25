@@ -1,0 +1,9 @@
+{
+  "name": "jsutils",
+  "version": "0.0.0",
+  "description": "Javascript utility functions",
+  "main": "index.js",
+  "repository": "https://github.com/RodrigoRoaRodriguez/jsutils",
+  "author": "Rodrigo Roa Rodríguez <rodrigoroarod@gmail.com>",
+  "license": "Apache-2.0"
+}
