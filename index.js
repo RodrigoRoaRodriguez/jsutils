@@ -1,12 +1,10 @@
 // TODO: make this into an NPM package.
+export * from './src/aggregates';
+// TODO: add linear regression.
 
 // TODO: rename to arrayUtils and create an objectUtils.
 export function range(count) {
   return Array(count).fill().map((_, i) => i);
-}
-
-export function sum(array) {
-  return array.reduce((total, next) => total + next, 0);
 }
 
 export function elementwise(fn, ...args) {
@@ -19,7 +17,7 @@ export function map2d(arrayOfArrays, fn) {
       fn(value, index, array, outerIndex, outerArray)));
 }
 
-//TODO: create misc utils file and move this function there.
+// TODO: create misc utils file and move this function there.
 export function getOrdinal(n) {
   const s = ['th', 'st', 'nd', 'rd'];
   const v = n % 100;
