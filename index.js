@@ -3,6 +3,12 @@ import { sum } from './src/aggregates';
 export * from './src/aggregates';
 // TODO: add linear regression.
 
+export function decamelize(string) {
+  return string
+    .replace(/([A-Z0-9])/g, ' $1')
+    .replace(/^./, char => char.toUpperCase())
+}
+
 export function normalize(array) {
   let total = sum(array);
   return array.map(n => n / total);
