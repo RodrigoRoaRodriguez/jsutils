@@ -1,6 +1,12 @@
+import { sum } from './src/aggregates';
 // TODO: make this into an NPM package.
 export * from './src/aggregates';
 // TODO: add linear regression.
+
+export function normalize(array) {
+  let total = sum(array);
+  return array.map(n => n / total);
+}
 
 // TODO: rename to arrayUtils and create an objectUtils.
 export function range(count) {
