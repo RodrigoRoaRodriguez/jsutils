@@ -6,12 +6,15 @@ export * from './src/aggregates';
 export function decamelize(string) {
   return string
     .replace(/([A-Z0-9])/g, ' $1')
-    .replace(/^./, char => char.toUpperCase())
+    .replace(/^./, char => char.toUpperCase());
 }
 
 export function normalize(array) {
-  let total = sum(array);
+  const total = sum(array);
   return array.map(n => n / total);
+}
+export function percentalize(array) {
+  return normalize(array).map(n => n * 100);
 }
 
 // TODO: rename to arrayUtils and create an objectUtils.
