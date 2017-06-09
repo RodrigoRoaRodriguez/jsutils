@@ -39,6 +39,10 @@ export function getOrdinal(n) {
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
+export function round(number, decimals = 0) {
+  return +`${Math.round(+(`${number}e${decimals}`))}e-${decimals}`;
+}
+
 
 // TODO: do this recursively for an arbitrary number of nesting levels
 export function flatten(arrayOfArrays) {
