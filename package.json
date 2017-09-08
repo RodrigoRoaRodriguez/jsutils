@@ -2,8 +2,18 @@
   "name": "jsutils",
   "version": "0.0.0",
   "description": "Javascript utility functions",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": "https://github.com/RodrigoRoaRodriguez/jsutils",
-  "author": "Rodrigo Roa Rodríguez <rodrigoroarod@gmail.com>",
-  "license": "Apache-2.0"
+  "author": "Rodrigo Roa Rodríguez",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "typescript": "^2.5.2"
+  }
 }

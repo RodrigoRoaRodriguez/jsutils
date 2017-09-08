@@ -1,6 +1,6 @@
-import { sum } from './src/aggregates';
+import { sum } from './aggregates';
 // TODO: make this into an NPM package.
-export * from './src/aggregates';
+export * from './aggregates';
 // TODO: add linear regression.
 
 export function decamelize(string) {
@@ -18,8 +18,8 @@ export function percentalize(array) {
 }
 
 // TODO: rename to arrayUtils and create an objectUtils.
-export function range(count) {
-  return Array(count).fill().map((_, i) => i);
+export function range(count:number, offset:number = 0, step:number = 1) {
+  return (Array(count) as any).fill().map((_, i) => i*step+offset);
 }
 
 export function elementwise(fn, ...args) {
@@ -33,7 +33,7 @@ export function map2d(arrayOfArrays, fn) {
 }
 
 // TODO: create misc utils file and move this function there.
-export function getOrdinal(n) {
+export function getOrdinal(n:number) {
   const s = ['th', 'st', 'nd', 'rd'];
   const v = n % 100;
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
@@ -45,7 +45,7 @@ export function round(number, decimals = 0) {
 
 
 // TODO: do this recursively for an arbitrary number of nesting levels
-export function flatten(arrayOfArrays) {
+export function flatten(arrayOfArrays) : any[]{
   return [].concat(...arrayOfArrays);
 }
 
