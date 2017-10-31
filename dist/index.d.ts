@@ -1,11 +1,3 @@
-export * from './aggregates';
-export declare function decamelize(string: any): any;
-export declare function normalize(array: any): any;
-export declare function percentalize(array: any): any;
-export declare function range(count: number, offset?: number, step?: number): any;
-export declare function elementwise(fn: any, ...args: any[]): any;
-export declare function map2d(arrayOfArrays: any, fn: any): any;
-export declare function getOrdinal(n: number): string;
-export declare function round(number: any, decimals?: number): number;
-export declare function flatten(arrayOfArrays: any): any[];
-export declare function combinations(arrayOfArrays: any): any[];
+export * from './math';
+export * from './array';
+export * from './misc';

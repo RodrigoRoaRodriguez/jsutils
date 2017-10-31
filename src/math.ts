@@ -11,3 +11,21 @@ export const geometricMean = (array, valueFn = id => id) =>
   array.map(valueFn).reduce(
     (prev, next) => prev * next, 1) ** (1 / array.length
     );
+
+export function normalize(array) {
+  const total = sum(array);
+  return array.map(n => n / total);
+}
+export function percentalize(array) {
+  return normalize(array).map(n => n * 100);
+}
+
+// export function combinations(arg) {
+//   const keys = Object.keys(arg);
+//   const values = keys.map(key => arg[key]);
+
+//   return values[0].map(a => values[1].map(b => ({ [keys[0]]: a, [keys[1]]: b })));
+// }
+
+
+// TODO: add linear regression.
