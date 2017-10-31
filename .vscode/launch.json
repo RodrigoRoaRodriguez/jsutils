@@ -23,7 +23,7 @@
       "args": [
         "-r",
         "ts-node/register",
-        "${relativeFile}"
+        "${workspaceRoot}/src/**/*.spec.ts"
       ],
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",

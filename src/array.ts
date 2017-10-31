@@ -39,7 +39,6 @@ export function dataArrayToObjects(header: string[], dataAsArrays: any[][]) {
   return dataAsArrays.map(dataRow => new DynamicDatum(dataRow));
 }
 
-
 /**
  * Creates an utility funciton for getting property values from an array.
  * 
@@ -47,4 +46,6 @@ export function dataArrayToObjects(header: string[], dataAsArrays: any[][]) {
  * @returns a function that returns an array of all the property values in the 
  *          object array for a given property name.
  */
-export const arrayGetter = (array:object[]) => (attr:string) => array.map(element => element[attr]);
+export function arrayGetter(array:object[]):Function {
+  return (attr:string) => array.map(element => element[attr]);
+} 

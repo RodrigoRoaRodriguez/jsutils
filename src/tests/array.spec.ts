@@ -1,10 +1,8 @@
-import {dataArrayToObjects} from './array';
+import {dataArrayToObjects, arrayGetter} from '../array';
 import { expect } from 'chai';
 import 'mocha';
 
-
-
-// TODO: test 
+// TODO: test the following
 // range
 // elementwise
 // map2d
@@ -27,9 +25,19 @@ describe('dataArrayToObjects function', () => {
   });
 
   it('create objects with the right values', () => {
+    // If it throws: `TypeError: Object.values is not a function` your Node 
+    // version is too old and you need to upgrade it.
     expect(objects.map(obj => (Object as any).values(obj))).to.deep.equal(data);
+    // expect(objects.map(obj => (Object as any).values(obj))).to.deep.equal(data);
   });
 });
-// dataArrayToObjects
-// arrayGetter
 
+describe('arrayGetter function', () => {
+  let data = [{x:0,y:1},{x:2,y:3},{x:4,y:5},{x:6,y:7},{x:8,y:9}];
+  let getter = arrayGetter(data);
+  it('returns the right values', () => {
+    let yValues = getter`y`;
+    expect(yValues).to.deep.equal([1,3,5,7,9]);
+  });
+})
+// arrayGetter
