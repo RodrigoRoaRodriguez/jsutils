@@ -40,7 +40,7 @@ exports.combinations = combinations;
  * @param {any[][]} dataAsArrays contains the property values
  * @returns data objects with properties and values from the arrays
  */
-function dataArrayToObjects(header, dataAsArrays) {
+function arraysToObjects(header, dataAsArrays) {
     // Create a constructor for the object
     function DynamicDatum(values) {
         var _this = this;
@@ -49,7 +49,7 @@ function dataArrayToObjects(header, dataAsArrays) {
     ;
     return dataAsArrays.map(function (dataRow) { return new DynamicDatum(dataRow); });
 }
-exports.dataArrayToObjects = dataArrayToObjects;
+exports.arraysToObjects = arraysToObjects;
 /**
  * Creates an utility funciton for getting property values from an array.
  *

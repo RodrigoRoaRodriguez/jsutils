@@ -10,7 +10,7 @@ export declare function combinations(arrayOfArrays: any): any[];
  * @param {any[][]} dataAsArrays contains the property values
  * @returns data objects with properties and values from the arrays
  */
-export declare function dataArrayToObjects(header: string[], dataAsArrays: any[][]): any[];
+export declare function arraysToObjects(header: string[], dataAsArrays: any[][]): any[];
 /**
  * Creates an utility funciton for getting property values from an array.
  *
