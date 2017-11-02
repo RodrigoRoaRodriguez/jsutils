@@ -6,9 +6,11 @@
   "types": "dist/index.d.ts",
   "private": true,
   "scripts": {
-    "version": "npm run build",
     "build": "tsc",
-    "test": "mocha -r ts-node/register src/**/*.spec.ts"
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "preversion": "npm test",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags"
   },
   "repository": "https://github.com/RodrigoRoaRodriguez/jsutils",
   "author": "Rodrigo Roa Rodríguez",
