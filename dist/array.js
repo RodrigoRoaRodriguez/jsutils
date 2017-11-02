@@ -33,8 +33,13 @@ function combinations(arrayOfArrays) {
     return flatten(arrayOfArrays[0].map(function (a) { return arrayOfArrays[1].map(function (b) { return [a, b]; }); }));
 }
 exports.combinations = combinations;
-// input: a header and an unlabeled data array.
-// output: data objects with properties for each element in the data array.
+/**
+ * Converts a minimal array representation of data and header into objects.
+ *
+ * @param {string[]} header contains the property names
+ * @param {any[][]} dataAsArrays contains the property values
+ * @returns data objects with properties and values from the arrays
+ */
 function dataArrayToObjects(header, dataAsArrays) {
     // Create a constructor for the object
     function DynamicDatum(values) {
@@ -45,6 +50,14 @@ function dataArrayToObjects(header, dataAsArrays) {
     return dataAsArrays.map(function (dataRow) { return new DynamicDatum(dataRow); });
 }
 exports.dataArrayToObjects = dataArrayToObjects;
-// input: an array 
-// output: a function that has: input: a property name string, output: the property values of the array
-exports.arrayGetter = function (array) { return function (attr) { return array.map(function (element) { return element[attr]; }); }; };
+/**
+ * Creates an utility funciton for getting property values from an array.
+ *
+ * @param {object[]} array  an array of objects
+ * @returns a function that returns an array of all the property values in the
+ *          object array for a given property name.
+ */
+function arrayGetter(array) {
+    return function (attr) { return array.map(function (element) { return element[attr]; }); };
+}
+exports.arrayGetter = arrayGetter;
