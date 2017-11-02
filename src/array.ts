@@ -31,7 +31,7 @@ export function combinations(arrayOfArrays) {
  * @param {any[][]} dataAsArrays contains the property values
  * @returns data objects with properties and values from the arrays
  */
-export function dataArrayToObjects(header: string[], dataAsArrays: any[][]) {
+export function arraysToObjects(header: string[], dataAsArrays: any[][]) {
   // Create a constructor for the object
   function DynamicDatum(this:any, values: any[]) {
     header.forEach((headerProperty, i) => this[headerProperty] = values[i]);
